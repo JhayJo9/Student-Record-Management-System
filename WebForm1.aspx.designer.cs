@@ -24,6 +24,15 @@ namespace WebApplication3
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// Label17 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label17;
+
+        /// <summary>
         /// Label1 control.
         /// </summary>
         /// <remarks>
@@ -213,13 +222,13 @@ namespace WebApplication3
         protected global::System.Web.UI.WebControls.Label Label11;
 
         /// <summary>
-        /// DropDownList3 control.
+        /// regionCb control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList3;
+        protected global::System.Web.UI.WebControls.DropDownList regionCb;
 
         /// <summary>
         /// Label12 control.
@@ -231,13 +240,13 @@ namespace WebApplication3
         protected global::System.Web.UI.WebControls.Label Label12;
 
         /// <summary>
-        /// DropDownList4 control.
+        /// provinceCb control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList4;
+        protected global::System.Web.UI.WebControls.DropDownList provinceCb;
 
         /// <summary>
         /// Label13 control.
@@ -249,13 +258,13 @@ namespace WebApplication3
         protected global::System.Web.UI.WebControls.Label Label13;
 
         /// <summary>
-        /// DropDownList5 control.
+        /// city_muniCb control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList5;
+        protected global::System.Web.UI.WebControls.DropDownList city_muniCb;
 
         /// <summary>
         /// Label14 control.
@@ -310,5 +319,23 @@ namespace WebApplication3
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBox9;
+
+        /// <summary>
+        /// Button1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
+
+        /// <summary>
+        /// Button2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button2;
     }
 }

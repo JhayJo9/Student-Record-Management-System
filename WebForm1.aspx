@@ -56,6 +56,24 @@
         body{
             background-color: #99FFCC;
         }
+        .auto-style11 {
+            text-align: left;
+            width: 148px;
+            height: 53px;
+        }
+        .auto-style12 {
+            width: 219px;
+            height: 53px;
+        }
+        .auto-style13 {
+            text-align: left;
+            width: 128px;
+            height: 53px;
+        }
+        .auto-style14 {
+            text-align: left;
+            height: 53px;
+        }
     </style>
 </head>
 <body>
@@ -63,6 +81,9 @@
    <center>
         <form id="form1" runat="server" class="mt-5">
                 <h1 style="text-align: center">Web-Based Student Record Management System</h1>
+          
+                 <asp:Label ID="Label17" runat="server" Text="" Visible="false" width="250px" CssClass="alert alert-warning"></asp:Label>
+        
                 <table>
                     <tr>
                         <td class="auto-style8">
@@ -72,7 +93,7 @@
                         <td class="auto-style10">
                             <asp:Label ID="Label2" runat="server" Text="Department"></asp:Label></td>
                         <td class="auto-style3">
-                            <asp:DropDownList ID="DeptCb" runat="server" AutoPostBack="True" Height="29px" Width="300px">
+                            <asp:DropDownList ID="DeptCb" runat="server" AutoPostBack="True" Height="29px" Width="300px" OnSelectedIndexChanged="DeptCb_SelectedIndexChanged">
                                 <asp:ListItem Value="1">Please Select Department</asp:ListItem>
                                 <asp:ListItem Value="2">School of Computer Science</asp:ListItem>
                                 <asp:ListItem Value="3">School of Business Management</asp:ListItem>
@@ -107,13 +128,13 @@
                     </tr>
 
                     <tr>
-                        <td class="auto-style8">
+                        <td class="auto-style11">
                             <asp:Label ID="Label7" runat="server" Text="Civil Status"></asp:Label></td>
-                        <td class="auto-style6">
+                        <td class="auto-style12">
                             <asp:DropDownList ID="DropDownList7" runat="server" Height="29px" Width="130px"></asp:DropDownList></td>
-                        <td class="auto-style10">
+                        <td class="auto-style13">
                             <asp:Label ID="Label8" runat="server" Text="Gender"></asp:Label></td>
-                        <td class="auto-style3">
+                        <td class="auto-style14">
                             <asp:RadioButtonList ID="RadioButtonList1" runat="server">
                                 <asp:ListItem Value="0">Male</asp:ListItem>
                                 <asp:ListItem Value="1">Female</asp:ListItem>
@@ -128,35 +149,35 @@
                         <td class="auto-style4">
                             <asp:Label ID="Label10" runat="server" Text="Email Address"></asp:Label></td>
                         <td class="auto-style2">
-                            <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox></td>
+                            <asp:TextBox ID="TextBox7" runat="server" Height="29px" Width="300px"></asp:TextBox></td>
                     </tr>
 
                     <tr>
                         <td class="auto-style8">
                             <asp:Label ID="Label11" runat="server" Text="Region"></asp:Label></td>
                         <td class="auto-style6">
-                            <asp:DropDownList ID="DropDownList3" runat="server" Height="29px" Width="188px"></asp:DropDownList></td>
+                            <asp:DropDownList ID="regionCb" runat="server" Height="29px" Width="415px" AutoPostBack="true" OnSelectedIndexChanged="regionCb_SelectedIndexChanged"></asp:DropDownList></td>
                     </tr>
 
                     <tr>
                          <td class="auto-style8">
                             <asp:Label ID="Label12" runat="server" Text="Province"></asp:Label></td>
                         <td class="auto-style6">
-                           <asp:DropDownList ID="DropDownList4" runat="server" Height="29px" Width="188px"></asp:DropDownList></td>
+                           <asp:DropDownList ID="provinceCb" runat="server" Height="29px" Width="415px" AutoPostBack="true" OnSelectedIndexChanged="provinceCb_SelectedIndexChanged"></asp:DropDownList></td>
                     </tr>
 
                     <tr>
                          <td class="auto-style8">
                             <asp:Label ID="Label13" runat="server" Text="City/Municipality"></asp:Label></td>
                         <td class="auto-style6">
-                            <asp:DropDownList ID="DropDownList5" runat="server" Height="29px" Width="188px"></asp:DropDownList></td>
+                            <asp:DropDownList ID="city_muniCb" runat="server" Height="29px" Width="415px" ></asp:DropDownList></td>
                     </tr>
 
                     <tr>
                          <td class="auto-style8">
                             <asp:Label ID="Label14" runat="server" Text="Barangay"></asp:Label></td>
                         <td class="auto-style6">
-                            <asp:DropDownList ID="DropDownList6" runat="server" Height="29px" Width="188px"></asp:DropDownList></td>
+                            <asp:DropDownList ID="DropDownList6" runat="server" Height="29px" Width="415px"></asp:DropDownList></td>
                     </tr>
 
                     <tr>
@@ -174,7 +195,12 @@
                     </tr>
 
                 </table>
+                <div class="d-flex justify-content-center column-gap-1 row-gap-1">
+                    <asp:Button CssClass="btn btn-primary" Width="83px" ID="Button1" runat="server" Text="Print" OnClick="Button1_Click" />
+                    <asp:Button CssClass="btn btn-danger" Width="83px" ID="Button2" runat="server" Text="Clear All" />
+                </div>
 
+        
         </form>
         </center>
 </body>
