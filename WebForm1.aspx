@@ -190,16 +190,16 @@
                          <td class="auto-style8">
                             <asp:Label ID="Label13" runat="server" Text="City/Municipality"></asp:Label></td>
                         <td class="auto-style6">
-                            <asp:DropDownList ID="city_muniCb" runat="server" Height="29px" Width="415px" ></asp:DropDownList></td>
+                            <asp:DropDownList ID="city_muniCb" runat="server" Height="29px" Width="415px" OnSelectedIndexChanged="city_muniCb_SelectedIndexChanged" AutoPostBack="True" ></asp:DropDownList></td>
                     </tr>
 
                     <tr>
                          <td class="auto-style8">
                             <asp:Label ID="Label14" runat="server" Text="Barangay"></asp:Label></td>
                         <td class="auto-style6">
-                            <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox> </td>
+                            <asp:DropDownList ID="barangayCb" runat="server" Height="29px" Width="415px" AutoPostBack="True" OnSelectedIndexChanged="barangayCb_SelectedIndexChanged" ></asp:DropDownList>
+                        </td>
                     </tr>
-
                     <tr>
                          <td class="auto-style8">
                             <asp:Label ID="Label15" runat="server" Text="Street"></asp:Label></td>
@@ -224,7 +224,7 @@
 
             <hr />
 
-           <div class="d-flex justify-content-center w-800">
+           <div class="d-flex justify-content-center w-800 mb-5">
                
                 <table>
                     <tr>
