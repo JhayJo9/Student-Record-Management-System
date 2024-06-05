@@ -33,15 +33,6 @@ namespace WebApplication3
         protected global::System.Web.UI.ScriptManager ScriptManager1;
 
         /// <summary>
-        /// Label17 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label17;
-
-        /// <summary>
         /// Label1 control.
         /// </summary>
         /// <remarks>
@@ -330,13 +321,13 @@ namespace WebApplication3
         protected global::System.Web.UI.WebControls.TextBox TextBox9;
 
         /// <summary>
-        /// Button1 control.
+        /// btnShowModal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button btnShowModal;
 
         /// <summary>
         /// Button2 control.
@@ -427,14 +418,5 @@ namespace WebApplication3
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label38;
-
-        /// <summary>
-        /// btnShowModal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnShowModal;
     }
 }

@@ -18,9 +18,11 @@ namespace WebApplication3
             {
                 getdep();
                 Getregion();
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "showModal", "showModal();", true);
+               //ScriptManager.RegisterStartupScript(this, this.GetType(), "showModal", "showModal();", true);
             }
-
+        
+                //ScriptManager.RegisterStartupScript(this, this.GetType(), "showModal", "showModal();", true);
+            
             Label30.Text = "".ToString();
             Label31.Text = "".ToString();
             Label32.Text = "".ToString();
@@ -34,10 +36,7 @@ namespace WebApplication3
 
         }
 
-        public void validate()
-        {
-           
-        }
+     
         public void getdep()
         {
             DataTable deptTB = new DataTable();
@@ -2287,9 +2286,8 @@ namespace WebApplication3
                 //getbarangay();
             }
         }
-        protected void regionCb_SelectedIndexChanged(object sender, EventArgs e)
+        public void getprovince()
         {
-
             if (int.Parse(regionCb.SelectedValue) > 0)
             {
                 DataTable provinceTb = new DataTable();
@@ -2478,6 +2476,11 @@ namespace WebApplication3
                 //getbarangay();
             }
         }
+        protected void regionCb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            getprovince();
+        }
         protected void provinceCb_SelectedIndexChanged(object sender, EventArgs e)
         {
             Getcity();
@@ -2494,7 +2497,7 @@ namespace WebApplication3
             String region = Convert.ToString(regionCb.SelectedItem.Text);
             String province = Convert.ToString(provinceCb.SelectedItem.Text);
             String city = Convert.ToString(city_muniCb.SelectedItem.Text);
-            //String b = Convert.ToString(barangayCb.SelectedItem.Text);
+            
             lname = TextBox2.Text;
             fname = TextBox3.Text;
             mname = TextBox4.Text;
@@ -2529,18 +2532,14 @@ namespace WebApplication3
 
         protected void ShowPopup_Click(object sender, EventArgs e)
         {
-            string title = "Greetings";
-            string body = "Welcome to ASPSnippets.com";
-            ClientScript.RegisterStartupScript(this.GetType(), "Popup", "ShowPopup('" + title + "', '" + body + "');", true);
         }
 
         protected void btnShowModal_Click(object sender, EventArgs e)
         {
-            // Collect information from various controls
+           
             String region = Convert.ToString(regionCb.SelectedItem.Text);
             String province = Convert.ToString(provinceCb.SelectedItem.Text);
             String city = Convert.ToString(city_muniCb.SelectedItem.Text);
-            // String b = Convert.ToString(barangayCb.SelectedItem.Text);
             String lname = TextBox2.Text;
             String fname = TextBox3.Text;
             String mname = TextBox4.Text;
@@ -2551,7 +2550,7 @@ namespace WebApplication3
             String street = TextBox8.Text;
             String zipcode = TextBox9.Text;
 
-            // Set the labels inside the modal
+           
             Label30.Text = studentno;
             Label31.Text = lname + ", " + fname + " " + mname;
             Label32.Text = Convert.ToString(RadioButtonList1.SelectedItem.Text);
@@ -2562,8 +2561,180 @@ namespace WebApplication3
             Label37.Text = emailadd;
             Label38.Text = zipcode + " " + barangay + " " + street + " " + city + " " + province + " " + region;
 
-            // Register the JavaScript function to show the modal
+            TextBox1.Text = "";
+            TextBox2.Text = "";
+            TextBox3.Text = "";
+            TextBox4.Text = "";
+            TextBox5.Text = "";
+            TextBox6.Text = "";
+            TextBox7.Text = "";
+            TextBox8.Text = "";
+            TextBox9.Text = "";
+
+           
+            TextBox1.Enabled = false;
+            TextBox2.Enabled = false;
+            TextBox3.Enabled = false;
+            TextBox4.Enabled = false;
+            TextBox5.Enabled = false;
+            TextBox6.Enabled = false;
+            TextBox7.Enabled = false;
+            TextBox8.Enabled = false;
+            TextBox9.Enabled = false;
+
+            civilCb.Enabled = false;
+            regionCb.Enabled = false;
+            provinceCb.Enabled = false;
+            city_muniCb.Enabled = false;
+            DeptCb.Enabled = false;
+            courseCb.Enabled = false;
+            RadioButtonList1.Enabled = false;
+
+            RadioButtonList1.SelectedIndex = -1;
+            regionCb.SelectedValue = "1";
+            DeptCb.SelectedValue = "1";
+            if (int.Parse(regionCb.SelectedValue) > 0)
+            {
+                DataTable provinceTb = new DataTable();
+                provinceTb.Columns.Add("provinceID", typeof(int));
+                provinceTb.Columns.Add("regionName");
+                provinceTb.Columns.Add("provinceName");
+
+                if (regionCb.SelectedValue == "1")
+                {
+                    provinceCb.SelectedIndex = -1;
+                }
+                provinceCb.DataSource = provinceTb;
+                provinceCb.DataTextField = "provinceName";
+                provinceCb.DataValueField = "provinceID";
+                provinceCb.DataBind();
+            }
+
+            if (int.Parse(regionCb.SelectedValue) > 0)
+            {
+                DataTable city_muniTb = new DataTable();
+                city_muniTb.Columns.Add("city_muniID", typeof(int));
+                city_muniTb.Columns.Add("provinceName");
+                city_muniTb.Columns.Add("city_muniName");
+
+                if (provinceCb.SelectedValue == "1")
+                {
+                    city_muniCb.SelectedIndex = -1;
+                }
+                city_muniCb.DataSource = city_muniTb;
+                city_muniCb.DataTextField = "city_muniName";
+                city_muniCb.DataValueField = "city_muniID";
+                city_muniCb.DataBind();
+            }
+
+            if (int.Parse(DeptCb.SelectedValue) > 0)
+            {
+                DataTable courseTB = new DataTable();
+                courseTB.Columns.Add("CourseID", typeof(int));
+                courseTB.Columns.Add("DeptID", typeof(int));
+                courseTB.Columns.Add("courseName");
+
+                if (DeptCb.SelectedValue == "1")
+                {
+                    courseCb.SelectedIndex = -1;
+                }
+                courseCb.DataSource = courseTB;
+                courseCb.DataTextField = "courseName";
+                courseCb.DataValueField = "CourseID";
+                courseCb.DataBind();
+            }
             ScriptManager.RegisterStartupScript(this, GetType(), "ShowModalScript", "showModal();", true);
+
+
+           
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            regionCb.SelectedValue = "1";
+            DeptCb.SelectedValue = "1";
+            if(int.Parse(regionCb.SelectedValue) > 0)
+            {
+                DataTable provinceTb = new DataTable();
+                provinceTb.Columns.Add("provinceID", typeof(int));
+                provinceTb.Columns.Add("regionName");
+                provinceTb.Columns.Add("provinceName");
+
+                if (regionCb.SelectedValue == "1")
+                {
+                    provinceCb.SelectedIndex = -1;
+                }
+               provinceCb.DataSource = provinceTb;
+                provinceCb.DataTextField = "provinceName";
+                provinceCb.DataValueField = "provinceID";
+            provinceCb.DataBind();
+            }
+
+            if (int.Parse(regionCb.SelectedValue) > 0)
+            {
+                DataTable city_muniTb = new DataTable();
+                city_muniTb.Columns.Add("city_muniID", typeof(int));
+                city_muniTb.Columns.Add("provinceName");
+                city_muniTb.Columns.Add("city_muniName");
+
+                if (provinceCb.SelectedValue == "1")
+                {
+                    city_muniCb.SelectedIndex = -1;
+                }
+                city_muniCb.DataSource = city_muniTb;
+                city_muniCb.DataTextField = "city_muniName";
+                city_muniCb.DataValueField = "city_muniID";
+                city_muniCb.DataBind();
+            }
+
+            if(int.Parse(DeptCb.SelectedValue) > 0)
+            {
+                DataTable courseTB = new DataTable();
+                courseTB.Columns.Add("CourseID", typeof(int));
+                courseTB.Columns.Add("DeptID", typeof(int));
+                courseTB.Columns.Add("courseName");
+
+                if (DeptCb.SelectedValue == "1")
+                {
+                    courseCb.SelectedIndex = -1;
+                }
+                courseCb.DataSource = courseTB;
+                courseCb.DataTextField = "courseName";
+                courseCb.DataValueField = "CourseID";
+                courseCb.DataBind();
+            }
+
+            TextBox1.Text = "";
+            TextBox2.Text = "";
+            TextBox3.Text = "";
+            TextBox4.Text = "";
+            TextBox5.Text = "";
+            TextBox6.Text = "";
+            TextBox7.Text = "";
+            TextBox8.Text = "";
+            TextBox9.Text = "";
+
+           
+
+            TextBox1.Enabled = true;
+            TextBox2.Enabled = true;
+            TextBox3.Enabled = true;
+            TextBox4.Enabled = true;
+            TextBox5.Enabled = true;
+            TextBox6.Enabled = true;
+            TextBox7.Enabled = true;
+            TextBox8.Enabled = true;
+            TextBox9.Enabled = true;
+
+            civilCb.Enabled =true;
+            regionCb.Enabled = true;
+            provinceCb.Enabled = true;
+            city_muniCb.Enabled = true;
+            DeptCb.Enabled = true;
+            courseCb.Enabled = true;
+            RadioButtonList1.Enabled = true;
+
+
         }
     }
 }

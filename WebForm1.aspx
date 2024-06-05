@@ -96,8 +96,6 @@
             <center>
                 <h1 style="text-align: center">Web-Based Student Record Management System</h1>
           
-                 <asp:Label ID="Label17" runat="server" Text="" Visible="false" width="250px" CssClass="alert alert-warning"></asp:Label>
-        
                 <table>
                     <tr>
                         <td class="auto-style8">
@@ -214,52 +212,17 @@
                     </tr>
 
                 </table>
-                <div class="d-flex justify-content-center column-gap-1 row-gap-1">
-                    <asp:Button Type="submit" CssClass="btn btn-primary" Width="83px" ID="Button1" runat="server" Text="Print" OnClick="Button1_Click" style="height: 34px" />
-                    <asp:Button CssClass="btn btn-danger" Width="83px" ID="Button2" runat="server" Text="Clear All" />
+                <div class="d-flex justify-content-center column-gap-2 row-gap-2">
+                      <asp:Button ID="btnShowModal" runat="server" Text="Print" CssClass="btn btn-primary" OnClick="btnShowModal_Click" Width="83px" />
+                    <asp:Button CssClass="btn btn-danger" Width="83px" ID="Button2" runat="server" Text="Clear All" OnClick="Button2_Click" />
                 </div>
 
              </center>
 
             <hr />
 
-            <%--<center>
-                <table>
-                    <tr>
-                        <td>
-                            <h2><asp:Label ID="Label18" runat="server" Text="Student Information"></asp:Label></h2></td></tr><tr>
-                        <td>
-                            <asp:Label ID="Label19" runat="server" Text="Student ID no. :"></asp:Label></td><td>
-                             <asp:Label ID="Label30" runat="server" Text="Label"></asp:Label></td></tr><tr>
-                        <td>
-                            <asp:Label ID="Label20" runat="server" Text="Student Name :"></asp:Label></td><td>
-                             <asp:Label ID="Label31" runat="server" Text="Label"></asp:Label></td></tr><tr>
-                        <td>
-                            <asp:Label ID="Label21" runat="server" Text="Gender :"></asp:Label></td><td>
-                             <asp:Label ID="Label32" runat="server" Text="Label"></asp:Label></td></tr><tr>
-                        <td>
-                            <asp:Label ID="Label22" runat="server" Text="Civil Status :"></asp:Label></td><td>
-                             <asp:Label ID="Label33" runat="server" Text="Label"></asp:Label></td></tr><tr>
-                        <td>
-                            <asp:Label ID="Label23" runat="server" Text="Course :"></asp:Label></td><td>
-                             <asp:Label ID="Label34" runat="server" Text="Label"></asp:Label></td></tr><tr>
-                        <td>
-                            <asp:Label ID="Label24" runat="server" Text="Department :"></asp:Label></td><td>
-                             <asp:Label ID="Label35" runat="server" Text="Label"></asp:Label></td></tr><tr>
-                        <td>
-                            <asp:Label ID="Label25" runat="server" Text="Phone no. :"></asp:Label></td><td>
-                             <asp:Label ID="Label36" runat="server" Text="Label"></asp:Label></td></tr><tr>
-                        <td>
-                            <asp:Label ID="Label26" runat="server" Text="Email Address :"></asp:Label></td><td>
-                             <asp:Label ID="Label37" runat="server" Text="Label"></asp:Label></td></tr><tr>
-                        <td>
-                            <asp:Label ID="Label27" runat="server" Text="Address :"></asp:Label></td><td>
-                             <asp:Label ID="Label38" runat="server" Text="Label"></asp:Label></td></tr>
-
-                </table>
-            </center>--%>
-
-            <!-- Modal -->
+           
+           
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -287,7 +250,7 @@
             </div>
         </div>
           
-            <asp:Button ID="btnShowModal" runat="server" Text="Show Modal" CssClass="btn btn-primary" OnClick="btnShowModal_Click" />
+          
         </form>
        
 
