@@ -18,7 +18,20 @@ namespace WebApplication3
             {
                 getdep();
                 Getregion();
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "showModal", "showModal();", true);
             }
+
+            Label30.Text = "".ToString();
+            Label31.Text = "".ToString();
+            Label32.Text = "".ToString();
+            Label33.Text = "".ToString();
+            Label34.Text = "".ToString();
+            Label35.Text = "".ToString();
+            Label36.Text = "".ToString();
+            Label37.Text = "".ToString();
+            Label38.Text = "".ToString();
+
+
         }
 
         public void validate()
@@ -2472,15 +2485,85 @@ namespace WebApplication3
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(TextBox1.Text))
-            {
-                Label17.Text = "Please fill in the text box.";
-                Label17.Visible = true;
-            }
-            else
-            {
-                Label17.Visible = false;
-            }
+            string studentno, gender, course, department, phoneno, emailadd, barangay, street, zipcode;
+            string lname, fname, mname;
+
+
+
+
+            String region = Convert.ToString(regionCb.SelectedItem.Text);
+            String province = Convert.ToString(provinceCb.SelectedItem.Text);
+            String city = Convert.ToString(city_muniCb.SelectedItem.Text);
+            //String b = Convert.ToString(barangayCb.SelectedItem.Text);
+            lname = TextBox2.Text;
+            fname = TextBox3.Text;
+            mname = TextBox4.Text;
+
+
+
+            studentno = TextBox1.Text;
+
+            phoneno = TextBox6.Text;
+            emailadd = TextBox7.Text;
+            barangay = TextBox5.Text;
+            street = TextBox8.Text;
+            zipcode = TextBox9.Text;
+
+
+            Label30.Text = studentno.ToString();
+            Label31.Text = lname + ", " + fname + " " + mname;
+            Label32.Text = Convert.ToString(RadioButtonList1.SelectedItem.Text);
+            Label33.Text = Convert.ToString(civilCb.SelectedItem.Text);
+            Label34.Text = Convert.ToString(courseCb.SelectedItem.Text);
+            Label35.Text = Convert.ToString(DeptCb.SelectedItem.Text);
+            Label36.Text = phoneno.ToString();
+            Label37.Text = emailadd.ToString();
+            Label38.Text = zipcode + " " + barangay + " " + street + " " + barangay + " " + city + "" + province + " " + region;
+
+        }
+
+        protected void RadioButtonList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        protected void ShowPopup_Click(object sender, EventArgs e)
+        {
+            string title = "Greetings";
+            string body = "Welcome to ASPSnippets.com";
+            ClientScript.RegisterStartupScript(this.GetType(), "Popup", "ShowPopup('" + title + "', '" + body + "');", true);
+        }
+
+        protected void btnShowModal_Click(object sender, EventArgs e)
+        {
+            // Collect information from various controls
+            String region = Convert.ToString(regionCb.SelectedItem.Text);
+            String province = Convert.ToString(provinceCb.SelectedItem.Text);
+            String city = Convert.ToString(city_muniCb.SelectedItem.Text);
+            // String b = Convert.ToString(barangayCb.SelectedItem.Text);
+            String lname = TextBox2.Text;
+            String fname = TextBox3.Text;
+            String mname = TextBox4.Text;
+            String studentno = TextBox1.Text;
+            String phoneno = TextBox6.Text;
+            String emailadd = TextBox7.Text;
+            String barangay = TextBox5.Text;
+            String street = TextBox8.Text;
+            String zipcode = TextBox9.Text;
+
+            // Set the labels inside the modal
+            Label30.Text = studentno;
+            Label31.Text = lname + ", " + fname + " " + mname;
+            Label32.Text = Convert.ToString(RadioButtonList1.SelectedItem.Text);
+            Label33.Text = Convert.ToString(civilCb.SelectedItem.Text);
+            Label34.Text = Convert.ToString(courseCb.SelectedItem.Text);
+            Label35.Text = Convert.ToString(DeptCb.SelectedItem.Text);
+            Label36.Text = phoneno;
+            Label37.Text = emailadd;
+            Label38.Text = zipcode + " " + barangay + " " + street + " " + city + " " + province + " " + region;
+
+            // Register the JavaScript function to show the modal
+            ScriptManager.RegisterStartupScript(this, GetType(), "ShowModalScript", "showModal();", true);
         }
     }
 }
