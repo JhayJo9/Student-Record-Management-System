@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
+using System.EnterpriseServices;
 using System.Linq;
 using System.Runtime.Remoting.Lifetime;
 using System.Web;
@@ -36,7 +37,63 @@ namespace WebApplication3
 
         }
 
-     
+        public void dropdownlistCLEAR()
+        {
+            RadioButtonList1.SelectedIndex = -1;
+            regionCb.SelectedValue = "1";
+            DeptCb.SelectedValue = "1";
+            if (int.Parse(regionCb.SelectedValue) > 0)
+            {
+                DataTable provinceTb = new DataTable();
+                provinceTb.Columns.Add("provinceID", typeof(int));
+                provinceTb.Columns.Add("regionName");
+                provinceTb.Columns.Add("provinceName");
+
+                if (regionCb.SelectedValue == "1")
+                {
+                    provinceCb.SelectedIndex = -1;
+                }
+                provinceCb.DataSource = provinceTb;
+                provinceCb.DataTextField = "provinceName";
+                provinceCb.DataValueField = "provinceID";
+                provinceCb.DataBind();
+            }
+
+            if (int.Parse(regionCb.SelectedValue) > 0)
+            {
+                DataTable city_muniTb = new DataTable();
+                city_muniTb.Columns.Add("city_muniID", typeof(int));
+                city_muniTb.Columns.Add("provinceName");
+                city_muniTb.Columns.Add("city_muniName");
+
+                if (provinceCb.SelectedValue == "1")
+                {
+                    city_muniCb.SelectedIndex = -1;
+                }
+                city_muniCb.DataSource = city_muniTb;
+                city_muniCb.DataTextField = "city_muniName";
+                city_muniCb.DataValueField = "city_muniID";
+                city_muniCb.DataBind();
+            }
+
+            if (int.Parse(DeptCb.SelectedValue) > 0)
+            {
+                DataTable courseTB = new DataTable();
+                courseTB.Columns.Add("CourseID", typeof(int));
+                courseTB.Columns.Add("DeptID", typeof(int));
+                courseTB.Columns.Add("courseName");
+
+                if (DeptCb.SelectedValue == "1")
+                {
+                    courseCb.SelectedIndex = -1;
+                }
+                courseCb.DataSource = courseTB;
+                courseCb.DataTextField = "courseName";
+                courseCb.DataValueField = "CourseID";
+                courseCb.DataBind();
+            }
+        
+        }
         public void getdep()
         {
             DataTable deptTB = new DataTable();
@@ -2590,119 +2647,17 @@ namespace WebApplication3
             courseCb.Enabled = false;
             RadioButtonList1.Enabled = false;
 
-            RadioButtonList1.SelectedIndex = -1;
-            regionCb.SelectedValue = "1";
-            DeptCb.SelectedValue = "1";
-            if (int.Parse(regionCb.SelectedValue) > 0)
-            {
-                DataTable provinceTb = new DataTable();
-                provinceTb.Columns.Add("provinceID", typeof(int));
-                provinceTb.Columns.Add("regionName");
-                provinceTb.Columns.Add("provinceName");
 
-                if (regionCb.SelectedValue == "1")
-                {
-                    provinceCb.SelectedIndex = -1;
-                }
-                provinceCb.DataSource = provinceTb;
-                provinceCb.DataTextField = "provinceName";
-                provinceCb.DataValueField = "provinceID";
-                provinceCb.DataBind();
-            }
-
-            if (int.Parse(regionCb.SelectedValue) > 0)
-            {
-                DataTable city_muniTb = new DataTable();
-                city_muniTb.Columns.Add("city_muniID", typeof(int));
-                city_muniTb.Columns.Add("provinceName");
-                city_muniTb.Columns.Add("city_muniName");
-
-                if (provinceCb.SelectedValue == "1")
-                {
-                    city_muniCb.SelectedIndex = -1;
-                }
-                city_muniCb.DataSource = city_muniTb;
-                city_muniCb.DataTextField = "city_muniName";
-                city_muniCb.DataValueField = "city_muniID";
-                city_muniCb.DataBind();
-            }
-
-            if (int.Parse(DeptCb.SelectedValue) > 0)
-            {
-                DataTable courseTB = new DataTable();
-                courseTB.Columns.Add("CourseID", typeof(int));
-                courseTB.Columns.Add("DeptID", typeof(int));
-                courseTB.Columns.Add("courseName");
-
-                if (DeptCb.SelectedValue == "1")
-                {
-                    courseCb.SelectedIndex = -1;
-                }
-                courseCb.DataSource = courseTB;
-                courseCb.DataTextField = "courseName";
-                courseCb.DataValueField = "CourseID";
-                courseCb.DataBind();
-            }
+            dropdownlistCLEAR();
             ScriptManager.RegisterStartupScript(this, GetType(), "ShowModalScript", "showModal();", true);
 
-
-           
+      
         }
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            regionCb.SelectedValue = "1";
-            DeptCb.SelectedValue = "1";
-            if(int.Parse(regionCb.SelectedValue) > 0)
-            {
-                DataTable provinceTb = new DataTable();
-                provinceTb.Columns.Add("provinceID", typeof(int));
-                provinceTb.Columns.Add("regionName");
-                provinceTb.Columns.Add("provinceName");
 
-                if (regionCb.SelectedValue == "1")
-                {
-                    provinceCb.SelectedIndex = -1;
-                }
-               provinceCb.DataSource = provinceTb;
-                provinceCb.DataTextField = "provinceName";
-                provinceCb.DataValueField = "provinceID";
-            provinceCb.DataBind();
-            }
-
-            if (int.Parse(regionCb.SelectedValue) > 0)
-            {
-                DataTable city_muniTb = new DataTable();
-                city_muniTb.Columns.Add("city_muniID", typeof(int));
-                city_muniTb.Columns.Add("provinceName");
-                city_muniTb.Columns.Add("city_muniName");
-
-                if (provinceCb.SelectedValue == "1")
-                {
-                    city_muniCb.SelectedIndex = -1;
-                }
-                city_muniCb.DataSource = city_muniTb;
-                city_muniCb.DataTextField = "city_muniName";
-                city_muniCb.DataValueField = "city_muniID";
-                city_muniCb.DataBind();
-            }
-
-            if(int.Parse(DeptCb.SelectedValue) > 0)
-            {
-                DataTable courseTB = new DataTable();
-                courseTB.Columns.Add("CourseID", typeof(int));
-                courseTB.Columns.Add("DeptID", typeof(int));
-                courseTB.Columns.Add("courseName");
-
-                if (DeptCb.SelectedValue == "1")
-                {
-                    courseCb.SelectedIndex = -1;
-                }
-                courseCb.DataSource = courseTB;
-                courseCb.DataTextField = "courseName";
-                courseCb.DataValueField = "CourseID";
-                courseCb.DataBind();
-            }
+            //dropdownlistCLEAR();
 
             TextBox1.Text = "";
             TextBox2.Text = "";

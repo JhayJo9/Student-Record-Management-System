@@ -86,6 +86,9 @@
             text-align: left;
             height: 53px;
         }
+        .auto-style15 {
+            width: 703px;
+        }
     </style>
 </head>
 <body bgcolor="#99FFCC">
@@ -221,36 +224,44 @@
 
             <hr />
 
-           
-           
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="myModalLabel">Student Information</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <p><strong>Student Number:</strong> <asp:Label ID="Label30" runat="server"></asp:Label></p>
-                        <p><strong>Name:</strong> <asp:Label ID="Label31" runat="server"></asp:Label></p>
-                        <p><strong>Gender:</strong> <asp:Label ID="Label32" runat="server"></asp:Label></p>
-                        <p><strong>Civil Status:</strong> <asp:Label ID="Label33" runat="server"></asp:Label></p>
-                        <p><strong>Course:</strong> <asp:Label ID="Label34" runat="server"></asp:Label></p>
-                        <p><strong>Department:</strong> <asp:Label ID="Label35" runat="server"></asp:Label></p>
-                        <p><strong>Phone Number:</strong> <asp:Label ID="Label36" runat="server"></asp:Label></p>
-                        <p><strong>Email Address:</strong> <asp:Label ID="Label37" runat="server"></asp:Label></p>
-                        <p><strong>Address:</strong> <asp:Label ID="Label38" runat="server"></asp:Label></p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+           <div class="d-flex justify-content-center w-800">
+               
+                <table>
+                    <tr>
+                        <td>
+                            <h2><asp:Label ID="Label18" runat="server" Text="Student Information"></asp:Label></h2></td></tr><tr>
+                        <td>
+                            <asp:Label ID="Label19" runat="server" Text="Student ID no. :"></asp:Label></td><td class="auto-style15">
+                             <asp:Label ID="Label30" runat="server" Text="Label"></asp:Label></td></tr><tr>
+                        <td>
+                            <asp:Label ID="Label20" runat="server" Text="Student Name :"></asp:Label></td><td class="auto-style15">
+                             <asp:Label ID="Label31" runat="server" Text="Label"></asp:Label></td></tr><tr>
+                        <td>
+                            <asp:Label ID="Label21" runat="server" Text="Gender :"></asp:Label></td><td class="auto-style15">
+                             <asp:Label ID="Label32" runat="server" Text="Label"></asp:Label></td></tr><tr>
+                        <td>
+                            <asp:Label ID="Label22" runat="server" Text="Civil Status :"></asp:Label></td><td class="auto-style15">
+                             <asp:Label ID="Label33" runat="server" Text="Label"></asp:Label></td></tr><tr>
+                        <td>
+                            <asp:Label ID="Label23" runat="server" Text="Course :"></asp:Label></td><td class="auto-style15">
+                             <asp:Label ID="Label34" runat="server" Text="Label"></asp:Label></td></tr><tr>
+                        <td>
+                            <asp:Label ID="Label24" runat="server" Text="Department :"></asp:Label></td><td class="auto-style15">
+                             <asp:Label ID="Label35" runat="server" Text="Label"></asp:Label></td></tr><tr>
+                        <td>
+                            <asp:Label ID="Label25" runat="server" Text="Phone no. :"></asp:Label></td><td class="auto-style15">
+                             <asp:Label ID="Label36" runat="server" Text="Label"></asp:Label></td></tr><tr>
+                        <td>
+                            <asp:Label ID="Label26" runat="server" Text="Email Address :"></asp:Label></td><td class="auto-style15">
+                             <asp:Label ID="Label37" runat="server" Text="Label"></asp:Label></td></tr><tr>
+                        <td>
+                            <asp:Label ID="Label27" runat="server" Text="Address :"></asp:Label></td><td class="auto-style15">
+                             <asp:Label ID="Label38" runat="server" Text="Label"></asp:Label></td></tr>
+
+                </table>
           
-          
+           </div>
+           
         </form>
        
 
