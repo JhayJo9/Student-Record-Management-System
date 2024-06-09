@@ -91,14 +91,22 @@
         }
     </style>
 </head>
-<body bgcolor="#99FFCC">
+<body style="background-color: #FCF6E9;" class="d-flex justify-content-center">
+ <div>
+
  
-   
-        <form id="form1" runat="server" class="mt-5">
-               <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-            <center>
+   <div class="d-flex justify-content-center flex-column">
+       
+        <div class="d-flex justify-content-center p-5">
                 <h1 style="text-align: center">Web-Based Student Record Management System</h1>
-          
+     </div>
+        <form id="form1" runat="server" >
+               <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+           
+            
+             <div style="width: 1110px; height: 810px; padding-top: 3rem; display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: #99FFCC">
+            
+            <center>
                 <table>
                     <tr>
                         <td class="auto-style8">
@@ -216,10 +224,10 @@
 
                 </table>
                 <div class="d-flex justify-content-center column-gap-2 row-gap-2">
-                      <asp:Button ID="btnShowModal" runat="server" Text="Print" CssClass="btn btn-primary" OnClick="btnShowModal_Click" Width="83px" />
+                      <asp:Button ID="btnShowModal" runat="server" Text="Print"  CssClass="btn btn-primary mr-5" OnClick="btnShowModal_Click" Width="83px" />
                     <asp:Button CssClass="btn btn-danger" Width="83px" ID="Button2" runat="server" Text="Clear All" OnClick="Button2_Click" />
                 </div>
-
+                     
              </center>
 
             <hr />
@@ -259,12 +267,14 @@
                              <asp:Label ID="Label38" runat="server" Text="Label"></asp:Label></td></tr>
 
                 </table>
-          
+               
            </div>
-           
+                  </div>
+         
         </form>
+            </div>
        
-
-  
+       
+  </div>
 </body>
 </html>
