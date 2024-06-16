@@ -5,254 +5,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <script>
-       
-        function changeBackground(dropdown) {
-            var selectedValue = dropdown.value;
-            document.body.className = ''; 
 
-            if (selectedValue === "2") {
-                document.body.classList.add('green-bg');
-            } else if (selectedValue === '3') {
-                document.body.classList.add('yellow-bg');
-            } else if (selectedValue === '4') {
-                document.body.classList.add('blue-bg');
-            } else {
-                document.body.classList.add('default-bg');
-            }
-        }
+    <link rel="stylesheet" href="style.css"/>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    </script>
-    <style>
-        *{
-    padding: 0px;
-    margin: 0px;
-    box-sizing: border-box;
-    font-family: Tahoma;
-}
-
-body{
-    background-color: #EDF1D6;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 5rem;
-    height: 2000px;
-}
-.contianer1{
-    background-color: #40513B;
-    width: 1100px;
-    height: 600px;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    margin-bottom: 7rem;
-    border: none;
-    border-radius: 6px;
-    
-}
-.contianer2{
-    background-color: #40513B;
-    width: 1100px;
-    height: 600px;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    margin-bottom: 7rem;
-    border: none;
-    border-radius: 6px;
-   position: relative;
-}
-
-
-.right-img{
-    position: absolute;
-    top: 30px;
-    right: 0px;
-}
-.right-img img{
-    width: 620px;
-    height: 550px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    opacity: 0.2;
-}
-.middle{
-    width: 1px;
-    height: 100%;
-    background-color: black;
-}
-.right{
-    width: 630px;
-    height: 550px;
-    background-color: #EDF1D6;
-    overflow: hidden;
-    overflow-y: scroll;
-    position: relative;
-    border: none;
-    border-radius: 6px;
-}
-.try{
-    display: flex;
-    flex-direction: column;
-    width: 130px;
-    margin-top: 2rem;
-    margin-left: 2rem;
-    background-color: green;  
-}
-.txt1, .txt2 , .txt3, .txt4, .txt5, .txt6, .txt7, .txt8, .txt9, .txt10, .txt11, .txt12, .txt13 , .txt14, .txt15{
-     width: 200px;
-    height: 25px;
-    padding-left: 1rem;
-    margin-bottom: .5rem;
-}
-.drp1, .drp5{
-        width: 200px;
-    height: 25px;
-    margin-bottom: .5rem;
-}
-.drp2, .drp3, .drp4{
-    height: 25px;
-    width: 500px;
-    margin-bottom: .5rem;
-}
-.drp6, .drp7{
-    height: 25px;
-    width: 350px;
-    margin-bottom: .5rem;
-}
-.dropdown{
-    display: flex;
-    flex-direction: column;
-    width: 130px; 
-}
-.radio{
-    margin-bottom: .5rem;
-}
-.TABLE{
-   margin-left: 2rem;
-   margin-top: 2rem;
-}
-.header {
-    position: sticky;
-    top: 0px;
-    background-color: #6B8A7A;
-    width: 613px;
-    height: 73px;
-    z-index: 1000;
-}
-.header p {
-    display: flex;
-    padding-top: 1.2rem;
-    align-items: center;
-    justify-content: center;
-    font-size: 23px;
-    font-weight: 600;
-    color: white;
-}
-.dummy{
-    color: #40513B;
-    margin-top: 1rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
-.btns{
-    position: sticky;
-    bottom: 0px;
-    background-color: #EDF1D6;
-    width: 613px;
-    height: 48px;
-}
-.btn{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    padding-top: .5rem;
-}
-.btn button{
-    width: 60px;
-    height: 32px;
-    border: none;
-    color: white;
-    background-color: #40513B;
-    border-radius: 6px;
-}
-@keyframes slide {
-    from{
-        transform: translate(0);
-    }
-    to{
-        transform: translate(-100%);
-    }
-}
-
-.logos{
-    overflow: hidden;
-    width: 300px;
-    height: 300px;
-    background-color: #40513B;
-    white-space: nowrap;
-    display: flex;
-    align-items: center;
-    position: relative;
-}
-.logos::before{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50px;
-    height: 100%;
-    background: linear-gradient(to left, rgba(255, 255, 255, 0),#40513B);
-    content: "";
-    z-index: 2;
-}
-.logos::after{
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 50px;
-    height: 100%;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0),#40513B);
-    content: "";
-    z-index: 2;
-}
-.logos:hover  .logo-slide{
-    animation-play-state: paused;
-}
-.logo-slide{
-    display: inline-block;  
-   animation:  35s slide infinite linear;
-}  
-.logo-slide img {
-    height: 250px;
-    margin: 0 10px;
-}
-/* styles.css */
-body.default-bg {
-    background-color: white;
-}
-
-body.green-bg {
-    background-color: green;
-}
-
-body.yellow-bg {
-    background-color: yellow;
-}
-
-body.blue-bg {
-    background-color: blue;
-}
-
-.auto-style1 {
-            height: 26px;
-        }
-    </style>
+    <script src="script.js"></script>
 </head>
 <body>
+    <div class="whole">
     <form  id="form1" runat="server" >
          <asp:ScriptManager ID="ScriptManager1" runat="server" />
         <div class="page">
@@ -436,26 +199,25 @@ body.blue-bg {
 
                     <div class="btns">
                         <div class="btn">
-                            <button>Print</button>
-                            <button>Clear All</button>
+                            <button class="tooltip-btn" data-tooltip="Scroll down to see the output">Print</button>
+                             <button class="tooltip-btn" data-tooltip="Clear all the value">Clear All</button>
                         </div>
                     </div>
                 </div>
             </div>
 
 
-            <div class="contianer2">
+            <div class="content">
                 <div class="left-2">
 
                 </div>
                 <div class="right-2">
-                    <div class="right-img">
-                        <img src="assets/scs-final (1).png" />
-                    </div>
+                    
                 </div>
             </div>
 
         </div>
         </form>
+    </div>
 </body>
 </html>
