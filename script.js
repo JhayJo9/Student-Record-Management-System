@@ -23,3 +23,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+function validateForm() {
+    var isValid = true;
+
+    // Validate TextBox
+    var textBox = document.getElementById('<%= TextBox1.ClientID %>');
+    var textBoxError = document.getElementById('TextBoxError');
+    if (textBox.value.trim() === "") {
+        textBoxError.style.display = 'block';
+        isValid = false;
+    } else {
+        textBoxError.style.display = 'none';
+    }
+
+    // Validate DropDownList
+    var dropDownList = document.getElementById('<%= DropDownList1.ClientID %>');
+    var dropDownListError = document.getElementById('DropDownListError');
+    if (dropDownList.value === "") {
+        dropDownListError.style.display = 'block';
+        isValid = false;
+    } else {
+        dropDownListError.style.display = 'none';
+    }
+
+    return isValid;
+}

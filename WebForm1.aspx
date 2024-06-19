@@ -112,7 +112,7 @@
                         <td class="auto-style8">
                             <asp:Label ID="Label1" runat="server" Text="Student No."></asp:Label></td>
                         <td class="auto-style6">
-                            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox></td>
+                            <asp:TextBox ID="TextBox1" runat="server" OnTextChanged="TextBox1_TextChanged" style="height: 34px"></asp:TextBox></td>
                         <td class="auto-style10">
                             <asp:Label ID="Label2" runat="server" Text="Department"></asp:Label></td>
                         <td class="auto-style3">
@@ -133,7 +133,7 @@
                         <td class="auto-style10">
                             <asp:Label ID="Label4" runat="server" Text="Course"></asp:Label></td>
                         <td>
-                            <asp:DropDownList ID="courseCb" runat="server" AutoPostBack="True" Height="29px" Width="300px"></asp:DropDownList></td>
+                            <asp:DropDownList ID="courseCb" runat="server" AutoPostBack="True" Height="29px" Width="300px" OnSelectedIndexChanged="courseCb_SelectedIndexChanged"></asp:DropDownList></td>
                     </tr>
 
                     <tr>

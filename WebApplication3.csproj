@@ -105,6 +105,9 @@
     <Content Include="About.aspx" />
     <Content Include="assets\arts.png" />
     <Content Include="assets\bse.png" />
+    <Content Include="assets\cct.png" />
+    <Content Include="assets\cctL.png" />
+    <Content Include="assets\nonepng.png" />
     <Content Include="assets\sbm-logo.png" />
     <Content Include="assets\scs-final %281%29.png" />
     <Content Include="assets\scs-final.png" />

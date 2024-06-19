@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
+using System.EnterpriseServices;
 using System.Linq;
+using System.Runtime.Remoting.Lifetime;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -15,7 +18,11 @@ namespace WebApplication3
             if (!IsPostBack)
             {
                 getdep();
+               
             }
+
+            Button1.Attributes.CssStyle.Add("border-radius", "6px");
+            Button2.Attributes.CssStyle.Add("border-radius", "6px");
         }
         public void getdep()
         {
@@ -32,16 +39,13 @@ namespace WebApplication3
             DeptCb.DataValueField = "deptID";
             DeptCb.DataBind();
         }
-        protected void DropDownList2_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
+
 
         protected void TextBox5_TextChanged(object sender, EventArgs e)
         {
 
         }
-
         protected void DeptCb_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (int.Parse(DeptCb.SelectedValue) > 0)
@@ -83,6 +87,10 @@ namespace WebApplication3
                 courseCb.DataValueField = "courseID";
                 courseCb.DataBind();
             }
+
         }
+
+
+
     }
 }
