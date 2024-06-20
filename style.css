@@ -18,8 +18,8 @@
 }
 .contianer1{
     background-color: #40513B;
-    width: 1100px;
-    height: 600px;
+    width: 1800px;
+    height: 700px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -133,8 +133,8 @@ html {
     background-color: black;
 }
 .right{
-    width: 630px;
-    height: 550px;
+    width: 700px;
+    height: 600px;
     background-color: #EDF1D6;
     overflow: hidden;
     overflow-y: scroll;

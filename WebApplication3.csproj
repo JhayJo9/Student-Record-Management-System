@@ -104,6 +104,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="assets\arts.png" />
+    <Content Include="assets\bg1.jpg" />
     <Content Include="assets\bse.png" />
     <Content Include="assets\cct.png" />
     <Content Include="assets\cctL.png" />
