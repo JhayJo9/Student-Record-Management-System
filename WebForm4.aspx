@@ -75,7 +75,7 @@
 }
 .content {
     background-color: #FFFFFF;
-    width: 680px;
+    width: 750px;
     height: 700px;
     display: flex;
     flex-direction: column;
@@ -88,7 +88,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-    width: 680px;
+    width: 750px;
     height: 120px;
     border: none;
     border-radius: 6px;
@@ -128,16 +128,15 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 680px;
+    width: 730px;
     height: 550px;
-    padding-top:  1rem;
     padding-left: 2rem;
 }
 .output{
     display: flex;  
     flex-direction: row;
     column-gap: 2rem;
-    width: 630px;
+    width: 730px;
     height: 550px;
 }
 .left-label{
@@ -370,6 +369,13 @@ table {
             padding: 3px;
            /* border: 1px solid black;*/
         }
+        .auto-style3 {
+            height: 36px;
+        }
+        table-output{
+            padding: 1rem;
+            border: 1px solid black;
+        }
     </style>
 </head>
 <body>
@@ -427,9 +433,9 @@ table {
                             </tr>
                            
                             <tr>
-                                <td>
+                                <td class="auto-style3">
                                     <asp:Label ID="Label2" runat="server" Text="Last Name"></asp:Label></td>
-                                <td>
+                                <td class="auto-style3">
                                     <asp:Label ID="Label7" runat="server" Text="Province"></asp:Label></td>
                             </tr>
                             <tr>
@@ -441,7 +447,7 @@ table {
                             </tr>
                             <tr>
                                 <td>
-                                    <asp:Label ID="Label3" runat="server" Text="Middle"></asp:Label></td>
+                                    <asp:Label ID="Label3" runat="server" Text="First Name"></asp:Label></td>
                                 <td>
                                     <asp:Label ID="Label8" runat="server" Text="City/Municipality"></asp:Label></td>
                             </tr>
@@ -453,7 +459,7 @@ table {
                             </tr>
                             <tr>
                                 <td>
-                                    <asp:Label ID="Label4" runat="server" Text="First Name"></asp:Label></td>
+                                    <asp:Label ID="Label4" runat="server" Text="Middle Name"></asp:Label></td>
                                  <td>
                                     <asp:Label ID="Label9" runat="server" Text="Department"></asp:Label></td>
                             </tr>
@@ -579,7 +585,7 @@ table {
                     <div class="left-2" style="background-color: #FFFFFF;">
                         <div class="content-output">
                             <div class="output">
-                                <div class="left-label">
+                               <%-- <div class="left-label">
                                     <asp:Label ID="Label17" runat="server" Text="Student No."></asp:Label>
                                     <asp:Label ID="Label18" runat="server" Text="Student Name"></asp:Label>
                                     <asp:Label ID="Label19" runat="server" Text="Gender"></asp:Label>
@@ -599,8 +605,47 @@ table {
                                     <asp:Label ID="Label31" runat="server" Text="Label"></asp:Label>
                                     <asp:Label ID="Label32" runat="server" Text="Label"></asp:Label>
                                     <asp:Label ID="Label33" runat="server" Text="Label"></asp:Label>
-                                    <asp:Label ID="Label34" runat="server" Text="Label"></asp:Label>
-                                </div>
+                                    <asp:Label ID="Label34" style="word-wrap: break-word;" runat="server" Text="Label"></asp:Label>
+                                </div>--%>
+
+                                <table class="table-output">
+                                    <tr>
+                                        <td>Student No.</td>
+                                        <td> <asp:Label ID="Label26" runat="server" Text="Label"></asp:Label></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Student Name</td>
+                                        <td> <asp:Label ID="Label27" runat="server" Text="Label"></asp:Label></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gender</td>
+                                        <td> <asp:Label ID="Label28" runat="server" Text="Label"></asp:Label></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Civil Status</td>
+                                        <td><asp:Label ID="Label29" runat="server" Text="Label"></asp:Label></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Course</td>
+                                        <td> <asp:Label ID="Label30" runat="server" Text="Label"></asp:Label></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Department</td>
+                                        <td><asp:Label ID="Label31" runat="server" Text="Label"></asp:Label></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Phone No.</td>
+                                        <td><asp:Label ID="Label32" runat="server" Text="Label"></asp:Label></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Email Address</td>
+                                        <td> <asp:Label ID="Label33" runat="server" Text="Label"></asp:Label></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Address</td>
+                                        <td> <asp:Label ID="Label34" style="word-wrap: break-word;" runat="server" Text="Label"></asp:Label></td>
+                                    </tr>
+                                </table>
                             </div>
                         </div>
                     </div>
@@ -611,6 +656,28 @@ table {
                 <asp:DropDownList Height="80px" Width="200px" ID="DropDownList1" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged"></asp:DropDownList>
                 <asp:DropDownList  Height="80px" Width="200px"  ID="DropDownList2" runat="server" AutoPostBack="True"></asp:DropDownList>
             </div>
+
+
+
+            <div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="errorModalLabel">Error</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="errorModalBody">
+        <!-- Error message will go here -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
     </form>
     </div>
 </body>

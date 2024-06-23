@@ -2606,64 +2606,141 @@ namespace WebApplication3
             Getcity();
         }
 
+        private void ShowErrorModal(string message)
+        {
+            string script = $"<script type=\"text/javascript\">" +
+                            $"document.getElementById('errorModalBody').innerText = '{message}';" +
+                            $"$('#errorModal').modal('show');" +
+                            $"</script>";
+            ClientScript.RegisterStartupScript(this.GetType(), "ShowErrorModal", script);
+        }
         protected void Button1_Click(object sender, EventArgs e)
         {
-            String region = Convert.ToString(regionCb.SelectedItem.Text);
-            String province = Convert.ToString(provinceCb.SelectedItem.Text);
-            String city = Convert.ToString(city_muniCb.SelectedItem.Text);
-            String lname = TextBox2.Text;
-            String fname = TextBox3.Text;
-            String mname = TextBox4.Text;
-            String studentno = TextBox1.Text;
-            String phoneno = TextBox5.Text;
-            String emailadd = TextBox8.Text;
-            String barangay = TextBox9.Text;
-            String street = TextBox6.Text;
-            String zipcode = TextBox7.Text;
+
+            try
+            {
+               
+                if (TextBox9 != null || TextBox6 != null || TextBox7 != null || TextBox1 != null || TextBox2 != null
+                    || TextBox3 != null || TextBox4 != null || TextBox5 != null || TextBox8 != null)
+                {
+                    String barangay = TextBox9.Text;
+                    String street = TextBox6.Text;
+                    String zipcode = TextBox7.Text;
 
 
-            Label26.Text = studentno;
-            Label27.Text = lname + ", " + fname + " " + mname;
-            Label28.Text = Convert.ToString(RadioButtonList2.SelectedItem.Text);
-            Label29.Text = Convert.ToString(civilCb.SelectedItem.Text);
-            Label30.Text = Convert.ToString(courseCb.SelectedItem.Text);
-            Label31.Text = Convert.ToString(DeptCb.SelectedItem.Text);
-            Label32.Text = phoneno;
-            Label33.Text = emailadd;
-            Label34.Text = zipcode + " " + barangay + " " + street + " " + city + " " + province + " " + region;
+                    String lname = TextBox2.Text;
+                    String fname = TextBox3.Text;
+                    String mname = TextBox4.Text;
+                    String studentno = TextBox1.Text;
+                    String phoneno = TextBox5.Text;
+                    String emailadd = TextBox8.Text;
+                    
+                   
+                    if (regionCb != null && regionCb.SelectedItem != null &&
+                        provinceCb != null && provinceCb.SelectedItem != null &&
+                        city_muniCb != null && city_muniCb.SelectedItem != null)
+                    {
+                        Label26.Text = studentno;
+                        Label27.Text = lname + ", " + fname + " " + mname;
+                        Label28.Text = Convert.ToString(RadioButtonList2.SelectedItem.Text);
+                        Label29.Text = Convert.ToString(civilCb.SelectedItem.Text);
+                        Label30.Text = Convert.ToString(courseCb.SelectedItem.Text);
+                        Label31.Text = Convert.ToString(DeptCb.SelectedItem.Text);
+                        Label32.Text = phoneno;
+                        Label33.Text = emailadd;
 
-            TextBox1.Text = "";
-            TextBox2.Text = "";
-            TextBox3.Text = "";
-            TextBox4.Text = "";
-            //TextBox5.Text = "";
-            TextBox6.Text = "";
-            TextBox7.Text = "";
-            TextBox8.Text = "";
-            TextBox9.Text = "";
+                        String region = Convert.ToString(regionCb.SelectedItem.Text);
+                        String province = Convert.ToString(provinceCb.SelectedItem.Text);
+                        String city = Convert.ToString(city_muniCb.SelectedItem.Text);
+
+                        //
+                       if(int.Parse(DeptCb.SelectedValue) > 0)
+                        {
+
+                            if(DeptCb.SelectedValue == "2")
+                            {
+                                Image1.ImageUrl = "~/assets/scs-final.png";
+                            }
+                            if(DeptCb.SelectedValue == "3")
+                            {
+                                Image1.ImageUrl = "~/assets/bse.png";
+                            }
+                            if(DeptCb.SelectedValue == "4")
+                            {
+                                Image1.ImageUrl = "~/assets/sbm-logo.png";
+                            }
+                            if(DeptCb.SelectedValue == "5")
+                            {
+                                Image1.ImageUrl = "~/assets/tor.png";
+                            }
+
+                        }
 
 
-            TextBox1.Enabled = false;
-            TextBox2.Enabled = false;
-            TextBox3.Enabled = false;
-            TextBox4.Enabled = false;
-            //TextBox5.Enabled = false;
-            TextBox6.Enabled = false;
-            TextBox7.Enabled = false;
-            TextBox8.Enabled = false;
-            TextBox9.Enabled = false;
+                        Label34.Text = zipcode + ", " + barangay + ", " + street + ", " + city + " " + province + " " + region;
 
-            civilCb.Enabled = false;
-            regionCb.Enabled = false;
-            provinceCb.Enabled = false;
-            city_muniCb.Enabled = false;
-            
-            DeptCb.Enabled = false;
-            courseCb.Enabled = false;
-            RadioButtonList2.Enabled = false;
+                        //DISABLE AND CLEAR
+                        TextBox1.Text = "";
+                        TextBox2.Text = "";
+                        TextBox3.Text = "";
+                        TextBox4.Text = "";
+                        TextBox5.Text = "";
+                        TextBox6.Text = "";
+                        TextBox7.Text = "";
+                        TextBox8.Text = "";
+                        TextBox9.Text = "";
 
 
-            dropdownlistCLEAR();
+                        TextBox1.Enabled = false;
+                        TextBox2.Enabled = false;
+                        TextBox3.Enabled = false;
+                        TextBox4.Enabled = false;
+                        TextBox5.Enabled = false;
+                        TextBox6.Enabled = false;
+                        TextBox7.Enabled = false;
+                        TextBox8.Enabled = false;
+                        TextBox9.Enabled = false;
+
+                        civilCb.Enabled = false;
+                        regionCb.Enabled = false;
+                        provinceCb.Enabled = false;
+                        city_muniCb.Enabled = false;
+
+                        DeptCb.Enabled = false;
+                        courseCb.Enabled = false;
+                        RadioButtonList2.Enabled = false;
+
+
+                        dropdownlistCLEAR();
+
+                    }
+                    else
+                    {
+                        ShowErrorModal("Please select item in combo boxes or Please Enter required information");
+                    }
+                }
+                else
+                {
+                    ShowErrorModal("Please Enter required information");
+                }
+            }
+            catch (Exception ex)
+            {
+               
+                ShowErrorModal("Please select item in Gender");
+               
+            }
+
+
+
+
+           
+
+
+           
+           
+
+          
         }
 
         protected void Button2_Click(object sender, EventArgs e)
@@ -2674,7 +2751,7 @@ namespace WebApplication3
             TextBox2.Text = "";
             TextBox3.Text = "";
             TextBox4.Text = "";
-            //TextBox5.Text = "";
+            TextBox5.Text = "";
             TextBox6.Text = "";
             TextBox7.Text = "";
             TextBox8.Text = "";
@@ -2686,7 +2763,7 @@ namespace WebApplication3
             TextBox2.Enabled = true;
             TextBox3.Enabled = true;
             TextBox4.Enabled = true;
-            //TextBox5.Enabled = true;
+            TextBox5.Enabled = true;
             TextBox6.Enabled = true;
             TextBox7.Enabled = true;
             TextBox8.Enabled = true;
@@ -2696,10 +2773,13 @@ namespace WebApplication3
             regionCb.Enabled = true;
             provinceCb.Enabled = true;
             city_muniCb.Enabled = true;
-            
+            RadioButtonList2.Enabled = true;
             DeptCb.Enabled = true;
             courseCb.Enabled = true;
-           
+
+            Image1.ImageUrl = "~/assets/nonepng.png";
+
+
         }
     }
 }
