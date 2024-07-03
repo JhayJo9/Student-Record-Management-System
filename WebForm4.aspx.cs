@@ -44583,8 +44583,24 @@ new Barangay(42043, 1648, "Western Bicutan")
                 courseCb.DataValueField = "CourseID";
                 courseCb.DataBind();
             }
+            if (int.Parse(regionCb.SelectedValue) > 0)
+            {
+                DataTable barangayTb = new DataTable();
+                barangayTb.Columns.Add("barangayID", typeof(int));
+                barangayTb.Columns.Add("cityMuniID", typeof(int));
+                barangayTb.Columns.Add("barangayName", typeof(string));
 
-          
+                if (regionCb.SelectedValue == "1")
+                {
+                    barangayCb.SelectedIndex = -1;
+                }
+                barangayCb.DataSource = barangayTb;
+                barangayCb.DataTextField = "barangayName";
+                barangayCb.DataValueField = "barangayID";
+                barangayCb.DataBind();
+            }
+
+
 
         }
         protected void TextBox5_TextChanged(object sender, EventArgs e)
