@@ -59,7 +59,7 @@
     margin-bottom: 8rem;
     border: none;
     border-radius: 6px;
-     background-image: url('assets/bg1.jpg');
+     background-image: url('assets/bg2.jpg');
     background-position: center;
     background-size: cover;
 }
@@ -184,7 +184,7 @@ html {
     margin-left: 2rem;
     background-color: green;  
 }
-.txt1, .txt2 , .txt3, .txt4, .txt5, .txt6, .txt7, .txt8, .txt9, .txt10, .txt11, .txt12, .txt13 , .txt14, .txt15, .drpc{
+.txt1, .txt2 , .txt3, .txt4, .txt5, .txt6, .txt7, .txt8, .txt9, .txt10, .txt11, .txt12, .txt13 , .txt14, .txt15, .drpc , .drp8{
      width: 400px;
     height: 25px;
     padding-left: 1rem;
@@ -455,7 +455,7 @@ table {
                                 <td>
                                     <asp:TextBox CssClass="txt3" ID="TextBox3" runat="server"></asp:TextBox></td>
                                  <td>
-                                    <asp:DropDownList CssClass="drp4" ID="city_muniCb" runat="server" AutoPostBack="True"></asp:DropDownList></td>
+                                    <asp:DropDownList CssClass="drp4" ID="city_muniCb" runat="server" AutoPostBack="True" OnSelectedIndexChanged="city_muniCb_SelectedIndexChanged"></asp:DropDownList></td>
                             </tr>
                             <tr>
                                 <td>
@@ -532,7 +532,7 @@ table {
                             </tr>
                             <tr>
                                 <td>
-                                    <asp:TextBox CssClass="txt9" ID="TextBox9" runat="server"></asp:TextBox></td>
+                                    <asp:DropDownList CssClass="drp8" ID="barangayCb" runat="server" AutoPostBack="True"></asp:DropDownList></td>
                             </tr>
                             <tr>
                                 <td>
@@ -571,10 +571,8 @@ table {
                             <img class="cct-img" src="assets/cctL.png" alt="fgf" />
                         </div>
                         <div class="header-texts">
-                            <div>Republic of the Philippines</div>
-                            <div>City of Tagaytay</div>
-                            <div class="title">CITY COLLEGE OF TAGAYTAY</div>
-                            <div class="add">Akle St., Kaybagal South, Tagaytay City</div>
+                            <div>Web-Based Student</div>
+                            <div>Record Management System</div>
                         </div>
                         <div class="header-right">
                             <%-- <img class="scs-img" src="assets/scs-final.png" alt="fgf" />--%>
