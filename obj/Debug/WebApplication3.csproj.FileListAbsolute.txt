@@ -71,3 +71,7 @@ C:\Users\penal\Desktop\CODE!!!\ITEC102\WebApplication3\obj\Debug\WebApplication3
 C:\Users\penal\Desktop\CODE!!!\ITEC102\WebApplication3\obj\Debug\WebApplication3.csproj.CopyComplete
 C:\Users\penal\Desktop\CODE!!!\ITEC102\WebApplication3\obj\Debug\WebApplication3.dll
 C:\Users\penal\Desktop\CODE!!!\ITEC102\WebApplication3\obj\Debug\WebApplication3.pdb
+C:\Users\penal\Source\Repos\Student-Record_1\obj\Debug\WebApplication3.csproj.AssemblyReference.cache
+C:\Users\penal\Source\Repos\Student-Record_1\obj\Debug\WebApplication3.csproj.CoreCompileInputs.cache
+C:\Users\penal\Source\Repos\Student-Record_1\obj\Debug\WebApplication3.dll
+C:\Users\penal\Source\Repos\Student-Record_1\obj\Debug\WebApplication3.pdb
